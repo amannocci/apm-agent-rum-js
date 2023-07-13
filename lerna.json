@@ -6,11 +6,11 @@
   "registry": "https://registry.npmjs.org",
   "command": {
     "version": {
-      "allowBranch": ["main", "4.x"],
+      "allowBranch": ["main", "4.x", "feat/improve-ci-release"],
       "conventionalCommits": true,
       "message": "chore(release): publish",
       "changelogPreset": "conventionalcommits",
-      "gitRemote": "upstream",
+      "gitRemote": "origin",
       "loglevel": "verbose"
     },
     "run": {
