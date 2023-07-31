@@ -102,7 +102,7 @@ async function dryRunMode() {
   }
 
   try {
-    await execa("npx", ["lerna", "publish", `--registry=${registryUrl}`, "--no-push", "--yes"], {stdin: process.stdin})
+    await execa("npx", ["lerna", "publish", `--registry=${registryUrl}`, /*"--no-push",*/ "--yes"], {stdin: process.stdin})
       .pipeStdout(process.stdout)
       .pipeStderr(process.stderr)
   } catch (err) {
