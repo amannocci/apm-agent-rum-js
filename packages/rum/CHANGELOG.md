@@ -3,6 +3,95 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.0.0 (2023-07-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* Dropping the support for IE 10 and android 4* versions. Bundling condigurations and testing environments are changed to reflect the same
+
+* parallelize the e2e tests and use single tunnel
+
+* update contributing.md
+
+### Features
+
+* add first input delay span ([#787](https://github.com/elastic/apm-agent-rum-js/issues/787)) ([af7deb9](https://github.com/elastic/apm-agent-rum-js/commit/af7deb9fbf556dac4966175eaa71ac3a63854db4))
+* capture click user-interaction transactions ([#604](https://github.com/elastic/apm-agent-rum-js/issues/604)) ([30530c1](https://github.com/elastic/apm-agent-rum-js/commit/30530c11c4b4ae46ad5fe140f1a15c1f3d240199))
+* capture http-request transactions ([#517](https://github.com/elastic/apm-agent-rum-js/issues/517)) ([27ed994](https://github.com/elastic/apm-agent-rum-js/commit/27ed994ea9866e4493015eb3817ab12266f572a5))
+* Initial react integration ([#265](https://github.com/elastic/apm-agent-rum-js/issues/265)) ([83cbebd](https://github.com/elastic/apm-agent-rum-js/commit/83cbebd7f8a0ae12f2b420e9095d4efff8d10d73))
+* Introduce managed transaction option ([#440](https://github.com/elastic/apm-agent-rum-js/issues/440)) ([a08f210](https://github.com/elastic/apm-agent-rum-js/commit/a08f21093735abf578be1de46f03beb89368ef88))
+* **rum-angular:** add support for angular 12 ([#1039](https://github.com/elastic/apm-agent-rum-js/issues/1039)) ([db7df0a](https://github.com/elastic/apm-agent-rum-js/commit/db7df0a574eb18926e16721452600a36fece5026))
+* **rum-core:** add apmRequest config typescript type ([#1254](https://github.com/elastic/apm-agent-rum-js/issues/1254)) ([cfaa327](https://github.com/elastic/apm-agent-rum-js/commit/cfaa327ba3715c90750157eab66149be8437d2a8))
+* **rum-core:** add apmServerRequest config ([#1019](https://github.com/elastic/apm-agent-rum-js/issues/1019)) ([6c44e48](https://github.com/elastic/apm-agent-rum-js/commit/6c44e48974640933a976a6dba52f0e8f8096043a))
+* **rum-core:** add event listeners for transactions ([#279](https://github.com/elastic/apm-agent-rum-js/issues/279)) ([d98f7c7](https://github.com/elastic/apm-agent-rum-js/commit/d98f7c7166b605c7fb4b4c97a4389461915672cb))
+* **rum-core:** add serverUrlPrefix config option ([#1081](https://github.com/elastic/apm-agent-rum-js/issues/1081)) ([cf407b4](https://github.com/elastic/apm-agent-rum-js/commit/cf407b4e5d225b9588c51e9762e1471474f711ad))
+* **rum-core:** Add task API ([#194](https://github.com/elastic/apm-agent-rum-js/issues/194)) ([0153229](https://github.com/elastic/apm-agent-rum-js/commit/015322981c1c560420b8838fbb144d10b64c2eda))
+* **rum-core:** capture unhandled promise rejection as errors ([#427](https://github.com/elastic/apm-agent-rum-js/issues/427)) ([ef34ccc](https://github.com/elastic/apm-agent-rum-js/commit/ef34ccc1f8d8784f31d7ee2e5fb9ba9aac3439d4))
+* **rum-core:** compress payload sent to APM Server ([#572](https://github.com/elastic/apm-agent-rum-js/issues/572)) ([a8f02c6](https://github.com/elastic/apm-agent-rum-js/commit/a8f02c663e2579a3a427c7f461416d17f45b7c62))
+* **rum-core:** enhance user transaction name obtaining ([#1390](https://github.com/elastic/apm-agent-rum-js/issues/1390)) ([1144b9f](https://github.com/elastic/apm-agent-rum-js/commit/1144b9fd3b84f49eca543a95e9bdf61a9aa37835))
+* **rum-core:** improve the debug logs with transaction details ([#469](https://github.com/elastic/apm-agent-rum-js/issues/469)) ([b9629b4](https://github.com/elastic/apm-agent-rum-js/commit/b9629b450b1eff9b0a53bcaff5a28c9926c61d49))
+* **rum-core:** patch history API ([#259](https://github.com/elastic/apm-agent-rum-js/issues/259)) ([be58997](https://github.com/elastic/apm-agent-rum-js/commit/be58997e1efa212dd0eabdf427fbbff1b9662a43))
+* **rum-core:** provide api to block managed transactions  ([#866](https://github.com/elastic/apm-agent-rum-js/issues/866)) ([5829a37](https://github.com/elastic/apm-agent-rum-js/commit/5829a37c5aff886834bd3a6dce3c415314ffccb6))
+* **rum-core:** use etag for fetching config ([#439](https://github.com/elastic/apm-agent-rum-js/issues/439)) ([bac0e15](https://github.com/elastic/apm-agent-rum-js/commit/bac0e15aeccfa84423e102b1b7ea3716ac7826f0))
+* **rum-core:** use global promise when available and fallback ([#629](https://github.com/elastic/apm-agent-rum-js/issues/629)) ([65f08e0](https://github.com/elastic/apm-agent-rum-js/commit/65f08e06d2819a5ba76f476d9a4bc1dfd7fe788b))
+* **rum:** add apiVersion config to types ([#833](https://github.com/elastic/apm-agent-rum-js/issues/833)) ([0679a71](https://github.com/elastic/apm-agent-rum-js/commit/0679a71e421251a7916d47e2128030e44cb9e334))
+* **rum:** add missing methods to types ([#890](https://github.com/elastic/apm-agent-rum-js/issues/890)) ([541e4aa](https://github.com/elastic/apm-agent-rum-js/commit/541e4aacc15a568673bb0189e9907ec35bd8394b))
+* **rum:** add sendCredentials config option to TypeScript typings ([#1243](https://github.com/elastic/apm-agent-rum-js/issues/1243)) ([369800e](https://github.com/elastic/apm-agent-rum-js/commit/369800e17db59e39dbbfc3c9ab0e1483b45b2c9e))
+* **rum:** add session to transactions ([#1005](https://github.com/elastic/apm-agent-rum-js/issues/1005)) ([a426c5b](https://github.com/elastic/apm-agent-rum-js/commit/a426c5b3a93db3f144e71103d8cc31283590e46d))
+* **rum:** add typescript typings ([#537](https://github.com/elastic/apm-agent-rum-js/issues/537)) ([dc4f391](https://github.com/elastic/apm-agent-rum-js/commit/dc4f391fe228a01b7b8e640a73127257a52d5d52))
+* **rum:** allow creating blocking spans from agent api ([#875](https://github.com/elastic/apm-agent-rum-js/issues/875)) ([50e692d](https://github.com/elastic/apm-agent-rum-js/commit/50e692daed13ed546a116e0921d639e41c0a3080))
+* **rum:** better log message on invalid configuration ([#216](https://github.com/elastic/apm-agent-rum-js/issues/216)) ([b65a806](https://github.com/elastic/apm-agent-rum-js/commit/b65a8067994b45100fef7d442c3bcce01d64d5a9))
+* **rum:** deprecate addTags in favor of addLabels ([#270](https://github.com/elastic/apm-agent-rum-js/issues/270)) ([3e313d3](https://github.com/elastic/apm-agent-rum-js/commit/3e313d3adbce1508da5b2d738751fb4b97bfff57))
+* **rum:** export rum types ([#1100](https://github.com/elastic/apm-agent-rum-js/issues/1100)) ([f141c0f](https://github.com/elastic/apm-agent-rum-js/commit/f141c0f504ef8ea2e703d32239344e309f5e38d6)), closes [#1045](https://github.com/elastic/apm-agent-rum-js/issues/1045) [#1045](https://github.com/elastic/apm-agent-rum-js/issues/1045)
+* **rum:** expose agent configuration type info ([#979](https://github.com/elastic/apm-agent-rum-js/issues/979)) ([f23bc2b](https://github.com/elastic/apm-agent-rum-js/commit/f23bc2bffe7bf597b33eb10e7f86f8979a8ecba0))
+* **rum:** extend spanOptions type ([#1101](https://github.com/elastic/apm-agent-rum-js/issues/1101)) ([07544e8](https://github.com/elastic/apm-agent-rum-js/commit/07544e8fd1585430b192bd127c9c70cc1237ee52))
+* **rum:** force minor version bump rum package ([#1402](https://github.com/elastic/apm-agent-rum-js/issues/1402)) ([8a656b7](https://github.com/elastic/apm-agent-rum-js/commit/8a656b7ab38897a0dc5f44f156cfd84c6c7140f8))
+* send events when user leaves the page  ([#1146](https://github.com/elastic/apm-agent-rum-js/issues/1146)) ([2429814](https://github.com/elastic/apm-agent-rum-js/commit/242981446a6a03ffe3b9bb8c1de34a4b1f9195e9))
+* Support central config management ([#415](https://github.com/elastic/apm-agent-rum-js/issues/415)) ([1382cc9](https://github.com/elastic/apm-agent-rum-js/commit/1382cc972d6c1b215374b76fe1f965717b6c2fcd))
+* warn users when invalid config options provided when init ([#1230](https://github.com/elastic/apm-agent-rum-js/issues/1230)) ([9bb158c](https://github.com/elastic/apm-agent-rum-js/commit/9bb158c22d0ae1f6ef6ea1679930c79814b60dcf))
+
+
+### Bug Fixes
+
+* report LCP score properly ([#1190](https://github.com/elastic/apm-agent-rum-js/issues/1190)) ([9ff2dd0](https://github.com/elastic/apm-agent-rum-js/commit/9ff2dd0a74e7d1398491dc021d4b96b9ccbeebe8))
+* **rum-core:** capture all spans as part of page-load transaction ([#273](https://github.com/elastic/apm-agent-rum-js/issues/273)) ([0122bf7](https://github.com/elastic/apm-agent-rum-js/commit/0122bf71b62e48481833fdae0e2abd0cd79d9c73))
+* **rum-core:** capture xhr error states in transaction ([#873](https://github.com/elastic/apm-agent-rum-js/issues/873)) ([cc6812a](https://github.com/elastic/apm-agent-rum-js/commit/cc6812a1bfcd0bcbbd90516426b7dda148b48e09))
+* **rum-core:** consider user defined type of high precedence ([#798](https://github.com/elastic/apm-agent-rum-js/issues/798)) ([b1d247c](https://github.com/elastic/apm-agent-rum-js/commit/b1d247c3654978187e9491079208c18267161e98))
+* **rum-core:** ensure apmRequest is called for events ([#1055](https://github.com/elastic/apm-agent-rum-js/issues/1055)) ([7ae7e39](https://github.com/elastic/apm-agent-rum-js/commit/7ae7e395fc5cb45252b1fa92c6ef8675e98e0249))
+* **rum-core:** export browser responsiveness interval correctly ([#658](https://github.com/elastic/apm-agent-rum-js/issues/658)) ([2ecf060](https://github.com/elastic/apm-agent-rum-js/commit/2ecf060a35dd1b64110149edc5bbdd4a4613caa9))
+* **rum-core:** hardcode agent name and version in service metadata ([#236](https://github.com/elastic/apm-agent-rum-js/issues/236)) ([a90337d](https://github.com/elastic/apm-agent-rum-js/commit/a90337d949f4606a23b5095d36f7994665135c4d))
+* **rum-core:** replace >> in click transaction name with '-' ([#690](https://github.com/elastic/apm-agent-rum-js/issues/690)) ([ca43a71](https://github.com/elastic/apm-agent-rum-js/commit/ca43a7104a4820b3d880282d32c0509e4190a9d0))
+* **rum-core:** schedule xhr invoke task as a macro task ([#480](https://github.com/elastic/apm-agent-rum-js/issues/480)) ([d4f181f](https://github.com/elastic/apm-agent-rum-js/commit/d4f181fd6c521dd85ec4d5a8abc9b516a75fb269)), closes [#390](https://github.com/elastic/apm-agent-rum-js/issues/390)
+* **rum:** add constructor types for ApmBase class ([#562](https://github.com/elastic/apm-agent-rum-js/issues/562)) ([273f63f](https://github.com/elastic/apm-agent-rum-js/commit/273f63fe3763c5566c45ce02755279ccc7faabb3))
+* **rum:** add number, boolean types to addLabels ([#1017](https://github.com/elastic/apm-agent-rum-js/issues/1017)) ([e40f5a0](https://github.com/elastic/apm-agent-rum-js/commit/e40f5a00123bbae641cd9525f963be04851a9718))
+* **rum:** allow setting labels before initializing ([#792](https://github.com/elastic/apm-agent-rum-js/issues/792)) ([e546e35](https://github.com/elastic/apm-agent-rum-js/commit/e546e35f78eece3373efbc002c5ec4964407566f))
+* **rum:** do not instrument frameworks when agent is inactive ([#885](https://github.com/elastic/apm-agent-rum-js/issues/885)) ([861a499](https://github.com/elastic/apm-agent-rum-js/commit/861a499b0fa6f524e590a2e8368e8e1a2bbac684))
+* **rum:** do not polyfill the global Promise variable ([#366](https://github.com/elastic/apm-agent-rum-js/issues/366)) ([f5dc95c](https://github.com/elastic/apm-agent-rum-js/commit/f5dc95c4c0d69494d706b70af3782ff4b37e6081))
+* **rum:** keep page load transaction until load ([#224](https://github.com/elastic/apm-agent-rum-js/issues/224)) ([29afb27](https://github.com/elastic/apm-agent-rum-js/commit/29afb2745e80007dec957919a9ae783b48eb6dd0))
+* **rum:** listen to all page clicks ([#1219](https://github.com/elastic/apm-agent-rum-js/issues/1219)) ([6746baf](https://github.com/elastic/apm-agent-rum-js/commit/6746baf5ddcc33a399156e615ea436dd4ceeff02))
+* **rum:** log unsupported message only on browser environment ([#382](https://github.com/elastic/apm-agent-rum-js/issues/382)) ([ff759d1](https://github.com/elastic/apm-agent-rum-js/commit/ff759d10caccd82e2fa7d8794a7220d0c1f1293b))
+* **rum:** noop for API when agent is inactive ([#569](https://github.com/elastic/apm-agent-rum-js/issues/569)) ([77d4f6d](https://github.com/elastic/apm-agent-rum-js/commit/77d4f6da20bf113bf803652fd01c8d785eea3722))
+* **rum:** publish all packages as transpiled modules ([#432](https://github.com/elastic/apm-agent-rum-js/issues/432)) ([1f4ee87](https://github.com/elastic/apm-agent-rum-js/commit/1f4ee873429e678f39d23076bead1e6399c49525))
+* **rum:** return noop agent when config is inactive ([#239](https://github.com/elastic/apm-agent-rum-js/issues/239)) ([7deef2d](https://github.com/elastic/apm-agent-rum-js/commit/7deef2d8a6b65c63fc1a268d878d8ba822a7b006))
+* **rum:** sync version mumber with latest published version ([#362](https://github.com/elastic/apm-agent-rum-js/issues/362)) ([909f480](https://github.com/elastic/apm-agent-rum-js/commit/909f480aaae20ad6dfcc4f23108bed32ba33a297))
+* **rum:** use logLevel config when agent is inactive ([#863](https://github.com/elastic/apm-agent-rum-js/issues/863)) ([bf524c1](https://github.com/elastic/apm-agent-rum-js/commit/bf524c1309a7a37d6406c59d802e12b4c5bc1706))
+* **rum:** use noop tracer on unsupported platforms ([#872](https://github.com/elastic/apm-agent-rum-js/issues/872)) ([b9e36ec](https://github.com/elastic/apm-agent-rum-js/commit/b9e36ece17a4d0aa7b6a1cae8eb95c102765e35d))
+* **rum:** use single instance of apm across all packages ([#796](https://github.com/elastic/apm-agent-rum-js/issues/796)) ([d585324](https://github.com/elastic/apm-agent-rum-js/commit/d585324d56494684ee58005ab43e075e8267da8a))
+
+
+### Performance Improvements
+
+* refactor ServiceFactory to use constant service names ([#764](https://github.com/elastic/apm-agent-rum-js/issues/764)) ([fdda235](https://github.com/elastic/apm-agent-rum-js/commit/fdda23555b418166727d85f143e84a16079d83e6)), closes [#238](https://github.com/elastic/apm-agent-rum-js/issues/238)
+* **rum-core:** random number generator using crypto.getRandomValues ([#705](https://github.com/elastic/apm-agent-rum-js/issues/705)) ([ce0db92](https://github.com/elastic/apm-agent-rum-js/commit/ce0db92d1ba057def0c81595340de4e9e59c4872))
+* **rum:** move to ES6 modules to reduce bundle size ([#237](https://github.com/elastic/apm-agent-rum-js/issues/237)) ([7aa4351](https://github.com/elastic/apm-agent-rum-js/commit/7aa43513ad75736ae42410cc32ae1a44bc31280c))
+* **rum:** remove debug logs on production build ([#245](https://github.com/elastic/apm-agent-rum-js/issues/245)) ([2565844](https://github.com/elastic/apm-agent-rum-js/commit/2565844febe9596eafe0f9fc07627bb23b0f097e))
+
+
+* BREAKING CHANGE: move IE 10 and Android 4 to unsupported list (#196) ([16f4440](https://github.com/elastic/apm-agent-rum-js/commit/16f444062331d8f14e58cc4fa3ad72c9d0e1b35f)), closes [#196](https://github.com/elastic/apm-agent-rum-js/issues/196)
+
+
+
 ## [5.13.0](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum@5.12.0...@elastic/apm-rum@5.13.0) (2023-07-18)
 
 

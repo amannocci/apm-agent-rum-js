@@ -59,19 +59,16 @@ export default class ApmBase {
   init(config) {
     if (this.isEnabled() && !this._initialized) {
       this._initialized = true
-      const [
-        configService,
-        loggingService,
-        transactionService
-      ] = this.serviceFactory.getService([
-        CONFIG_SERVICE,
-        LOGGING_SERVICE,
-        TRANSACTION_SERVICE
-      ])
+      const [configService, loggingService, transactionService] =
+        this.serviceFactory.getService([
+          CONFIG_SERVICE,
+          LOGGING_SERVICE,
+          TRANSACTION_SERVICE
+        ])
       /**
        * Set Agent version to be sent as part of metadata to the APM Server
        */
-      configService.setVersion('5.13.0')
+      configService.setVersion('6.0.0')
       this.config(config)
       /**
        * Set level here to account for both active and inactive cases
@@ -139,15 +136,12 @@ export default class ApmBase {
    * it resolves to the fetched config.
    */
   fetchCentralConfig() {
-    const [
-      apmServer,
-      loggingService,
-      configService
-    ] = this.serviceFactory.getService([
-      APM_SERVER,
-      LOGGING_SERVICE,
-      CONFIG_SERVICE
-    ])
+    const [apmServer, loggingService, configService] =
+      this.serviceFactory.getService([
+        APM_SERVER,
+        LOGGING_SERVICE,
+        CONFIG_SERVICE
+      ])
 
     return apmServer
       .fetchConfig(
@@ -289,27 +283,24 @@ export default class ApmBase {
 
   startTransaction(name, type, options) {
     if (this.isEnabled()) {
-      var transactionService = this.serviceFactory.getService(
-        TRANSACTION_SERVICE
-      )
+      var transactionService =
+        this.serviceFactory.getService(TRANSACTION_SERVICE)
       return transactionService.startTransaction(name, type, options)
     }
   }
 
   startSpan(name, type, options) {
     if (this.isEnabled()) {
-      var transactionService = this.serviceFactory.getService(
-        TRANSACTION_SERVICE
-      )
+      var transactionService =
+        this.serviceFactory.getService(TRANSACTION_SERVICE)
       return transactionService.startSpan(name, type, options)
     }
   }
 
   getCurrentTransaction() {
     if (this.isEnabled()) {
-      var transactionService = this.serviceFactory.getService(
-        TRANSACTION_SERVICE
-      )
+      var transactionService =
+        this.serviceFactory.getService(TRANSACTION_SERVICE)
       return transactionService.getCurrentTransaction()
     }
   }

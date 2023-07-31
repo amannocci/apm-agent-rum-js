@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.0 (2023-07-31)
+
+
+### Features
+
+* Initial react integration ([#265](https://github.com/elastic/apm-agent-rum-js/issues/265)) ([83cbebd](https://github.com/elastic/apm-agent-rum-js/commit/83cbebd7f8a0ae12f2b420e9095d4efff8d10d73))
+* Introduce managed transaction option ([#440](https://github.com/elastic/apm-agent-rum-js/issues/440)) ([a08f210](https://github.com/elastic/apm-agent-rum-js/commit/a08f21093735abf578be1de46f03beb89368ef88))
+* **rum-angular:** add support for angular 12 ([#1039](https://github.com/elastic/apm-agent-rum-js/issues/1039)) ([db7df0a](https://github.com/elastic/apm-agent-rum-js/commit/db7df0a574eb18926e16721452600a36fece5026))
+* **rum-core:** capture resource and user timing spans for soft navigation ([#423](https://github.com/elastic/apm-agent-rum-js/issues/423)) ([d461ae5](https://github.com/elastic/apm-agent-rum-js/commit/d461ae5ca17104957e9e62fc4b72a3e847f43fa3))
+* **rum-core:** end spa navigations after browser frame ([#730](https://github.com/elastic/apm-agent-rum-js/issues/730)) ([5397fa2](https://github.com/elastic/apm-agent-rum-js/commit/5397fa22eb88c080f7a6d07ef5b89dfefc572fb3))
+* **rum-core:** use global promise when available and fallback ([#629](https://github.com/elastic/apm-agent-rum-js/issues/629)) ([65f08e0](https://github.com/elastic/apm-agent-rum-js/commit/65f08e06d2819a5ba76f476d9a4bc1dfd7fe788b))
+* **rum-react:** add official support for react 17 ([#1047](https://github.com/elastic/apm-agent-rum-js/issues/1047)) ([cb0fada](https://github.com/elastic/apm-agent-rum-js/commit/cb0fada417d815eccac018e3d9c495bb3bcadbe2))
+* **rum-react:** publish traspiled react elements as es modules ([#356](https://github.com/elastic/apm-agent-rum-js/issues/356)) ([7c651c7](https://github.com/elastic/apm-agent-rum-js/commit/7c651c7d4d6a12bf04872480e7c56876bba1d109))
+* **rum-react:** use correct path when route is path array ([#800](https://github.com/elastic/apm-agent-rum-js/issues/800)) ([18ee0bf](https://github.com/elastic/apm-agent-rum-js/commit/18ee0bf28a8896975c940442f67a99e11089f41e))
+* send events when user leaves the page  ([#1146](https://github.com/elastic/apm-agent-rum-js/issues/1146)) ([2429814](https://github.com/elastic/apm-agent-rum-js/commit/242981446a6a03ffe3b9bb8c1de34a4b1f9195e9))
+* Support central config management ([#415](https://github.com/elastic/apm-agent-rum-js/issues/415)) ([1382cc9](https://github.com/elastic/apm-agent-rum-js/commit/1382cc972d6c1b215374b76fe1f965717b6c2fcd))
+
+
+### Bug Fixes
+
+* report LCP score properly ([#1190](https://github.com/elastic/apm-agent-rum-js/issues/1190)) ([9ff2dd0](https://github.com/elastic/apm-agent-rum-js/commit/9ff2dd0a74e7d1398491dc021d4b96b9ccbeebe8))
+* **rum-core:** consider user defined type of high precedence ([#798](https://github.com/elastic/apm-agent-rum-js/issues/798)) ([b1d247c](https://github.com/elastic/apm-agent-rum-js/commit/b1d247c3654978187e9491079208c18267161e98))
+* **rum-react:** avoid rerendering on query param changes ([#748](https://github.com/elastic/apm-agent-rum-js/issues/748)) ([6a4ab16](https://github.com/elastic/apm-agent-rum-js/commit/6a4ab16e283dbed89d05327a6ad068360857e2cb))
+* **rum-react:** capture network requests inside useEffect hook ([#353](https://github.com/elastic/apm-agent-rum-js/issues/353)) ([ae25200](https://github.com/elastic/apm-agent-rum-js/commit/ae25200642c1eeb5dcd629b0219513deacf14d6b))
+* **rum-react:** check component in withTransaction ([#328](https://github.com/elastic/apm-agent-rum-js/issues/328)) ([e348874](https://github.com/elastic/apm-agent-rum-js/commit/e348874feb128be347814b93b3d654e9c76b92c5))
+* **rum-react:** create transaction only on component mount ([#419](https://github.com/elastic/apm-agent-rum-js/issues/419)) ([a290448](https://github.com/elastic/apm-agent-rum-js/commit/a290448fc331126c8d036d5184297d79f415d352))
+* **rum-react:** render the correct component when using ApmRoute with Switch ([#342](https://github.com/elastic/apm-agent-rum-js/issues/342)) ([0b3f0a0](https://github.com/elastic/apm-agent-rum-js/commit/0b3f0a050b2ee4b7b122748bce9e4b1956494d65))
+* **rum-react:** respect active flag in react integration ([#392](https://github.com/elastic/apm-agent-rum-js/issues/392)) ([6d7e9db](https://github.com/elastic/apm-agent-rum-js/commit/6d7e9db80e8e4f284e88cbd8160b70f5f29581cf))
+* **rum:** do not instrument frameworks when agent is inactive ([#885](https://github.com/elastic/apm-agent-rum-js/issues/885)) ([861a499](https://github.com/elastic/apm-agent-rum-js/commit/861a499b0fa6f524e590a2e8368e8e1a2bbac684))
+* **rum:** publish all packages as transpiled modules ([#432](https://github.com/elastic/apm-agent-rum-js/issues/432)) ([1f4ee87](https://github.com/elastic/apm-agent-rum-js/commit/1f4ee873429e678f39d23076bead1e6399c49525))
+
+
+### Performance Improvements
+
+* refactor ServiceFactory to use constant service names ([#764](https://github.com/elastic/apm-agent-rum-js/issues/764)) ([fdda235](https://github.com/elastic/apm-agent-rum-js/commit/fdda23555b418166727d85f143e84a16079d83e6)), closes [#238](https://github.com/elastic/apm-agent-rum-js/issues/238)
+* **rum-core:** random number generator using crypto.getRandomValues ([#705](https://github.com/elastic/apm-agent-rum-js/issues/705)) ([ce0db92](https://github.com/elastic/apm-agent-rum-js/commit/ce0db92d1ba057def0c81595340de4e9e59c4872))
+
+
+
 ### [1.4.3](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum-react@1.4.2...@elastic/apm-rum-react@1.4.3) (2023-07-18)
 
 **Note:** Version bump only for package @elastic/apm-rum-react
